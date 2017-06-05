@@ -15,6 +15,7 @@ public class Parts {
     //
     public enum Type
     {
+        Generic,
         Keyboard,
         Monitor,
         Chassis,
@@ -26,6 +27,7 @@ public class Parts {
     //
     public enum Manufactuter
     {
+        Generic,
         ASUS,
         Dell,
         Lenovo,

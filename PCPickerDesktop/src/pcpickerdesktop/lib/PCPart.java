@@ -9,10 +9,10 @@ package pcpickerdesktop.lib;
  *
  * @author appbenigno
  */
-public class PCPart {
+public class PCPart implements iPCPart {
     private int partID = 0;
     private String partName = "";
-    
+    private Parts.Type partType = Parts.Type.Generic;
     private String partDescription = "";
     private String partManufacturer = "";
     private String partBranch = "";
@@ -30,34 +30,76 @@ public class PCPart {
         partBranch = branch;
         partQuantity = quantity;
     }
-    
-    public int ID()
-    {
+
+    @Override
+    public int ID() {
         return partID;
     }
-    
-    public String Name()
-    {
+
+    @Override
+    public void ID(int _id) {
+        partID = _id;
+    }
+
+    @Override
+    public String Name() {
         return partName;
     }
-    
-    public String Description()
-    {
+
+    @Override
+    public void Name(String _name) {
+        partName = _name;
+    }
+
+    @Override
+    public String Type() {
+        return partType.toString();
+    }
+
+    @Override
+    public void Type(Parts.Type _type) {
+        partType = _type;
+    }
+
+    @Override
+    public String Description() {
         return partDescription;
     }
-    
-    public String Manufacturer()
-    {
+
+    @Override
+    public void Description(String _description) {
+        partDescription = _description;
+    }
+
+    @Override
+    public String Manufacturer() {
         return partManufacturer;
     }
-    
-    public String Branch()
-    {
+
+    @Override
+    public void Manufacturer(String _manufacturer) {
+        partManufacturer = _manufacturer;
+    }
+
+    @Override
+    public String Branch() {
         return partBranch;
     }
-    
-    public int Quantity()
-    {
+
+    @Override
+    public void Branch(String _branch) {
+        partBranch = _branch;
+    }
+
+    @Override
+    public int Quantity() {
         return partQuantity;
     }
+
+    @Override
+    public void Quantity(int _quantity) {
+        partQuantity = _quantity;
+    }
+    
+    
 }
