@@ -17,6 +17,7 @@ public class PCPickerDesktop {
     public static void main(String[] args) {
         // TODO code application logic here
         System.out.println("Howdy");
+        System.out.println("How Are you?");
     }
     
 }
