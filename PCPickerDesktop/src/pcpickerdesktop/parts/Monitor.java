@@ -11,9 +11,12 @@ import pcpickerdesktop.lib.Parts;
  * @author appbenigno
  */
 public class Monitor extends pcpickerdesktop.lib.PCPart {
+    
+    // Default Constructor
     public Monitor()
     {}
     
+    // Constructor Parameters
     public Monitor(int _id, String _name, String _description, String _manufacturer, String _branch, int _quantity)
     {
         super(_id, _name, _description, _manufacturer, _branch, _quantity);

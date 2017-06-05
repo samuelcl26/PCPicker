@@ -12,9 +12,11 @@ import pcpickerdesktop.lib.Parts;
  */
 public class Chassis extends pcpickerdesktop.lib.PCPart {
     
+    // Default Constructor
     public Chassis()
     {}
     
+    // Constructor Parameters
     public Chassis(int _id, String _name, String _description, String _manufacturer, String _branch, int _quantity)
     {
         super(_id, _name, _description, _manufacturer, _branch, _quantity);
