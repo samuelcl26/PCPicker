@@ -4,13 +4,14 @@
  * and open the template in the editor.
  */
 package pcpickerdesktop.parts;
+import pcpickerdesktop.lib.Parts;
 
 /**
  *
  * @author appbenigno
  */
 public class Keyboard extends pcpickerdesktop.lib.PCPart {
-    private String partType = "Keyboard";
+    private Parts.Type partType = Parts.Type.Keyboard;
     
     public Keyboard()
     {}
@@ -18,5 +19,10 @@ public class Keyboard extends pcpickerdesktop.lib.PCPart {
     public Keyboard(int _id, String _name, String _description, String _manufacturer, String _branch, int _quantity)
     {
         super(_id, _name, _description, _manufacturer, _branch, _quantity);
+    }
+    
+    public String Type()
+    {
+        return partType.toString();
     }
 }
