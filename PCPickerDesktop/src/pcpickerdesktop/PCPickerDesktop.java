@@ -27,7 +27,7 @@ public class PCPickerDesktop {
         System.out.println(myKeyboard.Description());
         System.out.println(myKeyboard.Manufacturer());
         System.out.println(myKeyboard.Branch());
-        System.out.println(myKeyboard.Quantity());
+        //System.out.println(myKeyboard.Quantity());
     }
     
 }
