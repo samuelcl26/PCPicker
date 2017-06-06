@@ -17,11 +17,12 @@ public class PCPart implements iPCPart {
     private String partManufacturer = "";
     private String partBranch = "";
     private int partQuantity = 0;
+    private double partPrice = 0.0;
     
     public PCPart()
     {}
     
-    public PCPart(int id, String name, String description, String manufacturer, String branch, int quantity)
+    public PCPart(int id, String name, String description, String manufacturer, String branch, int quantity, double price)
     {
         partID = id;
         partName = name;
@@ -29,6 +30,7 @@ public class PCPart implements iPCPart {
         partManufacturer = manufacturer;
         partBranch = branch;
         partQuantity = quantity;
+        partPrice = price;
     }
 
     @Override
@@ -99,6 +101,16 @@ public class PCPart implements iPCPart {
     @Override
     public void Quantity(int _quantity) {
         partQuantity = _quantity;
+    }
+
+    @Override
+    public double Price() {
+        return partPrice;
+    }
+
+    @Override
+    public void Price(double _price) {
+        partPrice = _price;
     }
     
     

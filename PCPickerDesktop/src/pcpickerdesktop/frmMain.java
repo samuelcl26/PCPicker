@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package pcpickerdesktop;
+import pcpickerdesktop.lib.*;
+import pcpickerdesktop.parts.*;
 
 /**
  *
@@ -329,12 +331,23 @@ public class frmMain extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         addComponentButton.setText("Add");
+        addComponentButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addComponentButtonActionPerformed(evt);
+            }
+        });
 
         jButton6.setText("Search");
 
         jLabel20.setText("Core Count:");
 
         jLabel21.setText("Core Threads:");
+
+        cpuThreadText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cpuThreadTextActionPerformed(evt);
+            }
+        });
 
         jLabel22.setText("Frequency:");
 
@@ -562,6 +575,34 @@ public class frmMain extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_compTypeComboActionPerformed
 
+    private void addComponentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addComponentButtonActionPerformed
+        /*
+            create procedure add_processor
+            (
+                comp_id varchar(25),
+                comp_manufacturer varchar(50),
+                comp_name varchar(50),
+                core_clock varchar(20),
+                core_num int,
+                thread_num int,
+                socket_ varchar(50),
+                tdp int, 
+                comp_price double,
+                comp_type varchar(50)
+            )
+        */
+        //Processor myproc = new Processor();
+        //myproc.addCPU(compIdText.getText(), compManufacturerText.getText(), compNameText.getText(), Integer.parseInt(cpuFrequencyText.getText()), Integer.parseInt(cpuCountText.getText()), Integer.parseInt(cpuThreadText.getText()), cpuSocketText.getText(), Integer.parseInt(cpuTDPText.getText()), Double.parseDouble(compPriceText.getText()), compTypeCombo.getSelectedItem().toString());
+        
+        //addCPU(compIdText.getText(), compManufacturerText.getText(), compNameText.getText(), Integer.parseInt(cpuFrequencyText.getText()), Integer.parseInt(cpuCountText.getText()), Integer.parseInt(cpuThreadText.getText()), cpuSocketText.getText(), Integer.parseInt(cpuTDPText.getText()), Double.parseDouble(compPriceText.getText()), compTypeCombo.getSelectedItem().toString());
+        addGPU(compIdText.getText(), compManufacturerText.getText(), compNameText.getText(), Integer.parseInt(cpuFrequencyText.getText()), cpuCountText.getText(), cpuSocketText.getText(), Integer.parseInt(cpuThreadText.getText()), Integer.parseInt(cpuTDPText.getText()), compTypeCombo.getSelectedItem().toString());
+    }//GEN-LAST:event_addComponentButtonActionPerformed
+
+    
+    private void cpuThreadTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cpuThreadTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cpuThreadTextActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -670,4 +711,16 @@ public class frmMain extends javax.swing.JFrame {
     private javax.swing.JTextField searchOrderText;
     private javax.swing.JTextField zipText;
     // End of variables declaration//GEN-END:variables
+
+    private static void addCPU(java.lang.String compId, java.lang.String compManufacturer, java.lang.String compName, int coreClock, int coreNum, int threadNum, java.lang.String socket, int tdp, double compPrice, java.lang.String compType) {
+        pcpicker.PcpickerWebservice_Service service = new pcpicker.PcpickerWebservice_Service();
+        pcpicker.PcpickerWebservice port = service.getPcpickerWebservicePort();
+        port.addCPU(compId, compManufacturer, compName, coreClock, coreNum, threadNum, socket, tdp, compPrice, compType);
+    }
+
+    private static void addGPU(java.lang.String compId, java.lang.String compManufacturer, java.lang.String compName, int coreClock, java.lang.String memDdr, java.lang.String memCapacity, int memClock, double compPrice, java.lang.String compType) {
+        pcpicker.PcpickerWebservice_Service service = new pcpicker.PcpickerWebservice_Service();
+        pcpicker.PcpickerWebservice port = service.getPcpickerWebservicePort();
+        port.addGPU(compId, compManufacturer, compName, coreClock, memDdr, memCapacity, memClock, compPrice, compType);
+    }
 }

@@ -24,4 +24,6 @@ public interface iPCPart {
     public void Branch(String _branch);
     public int Quantity();
     public void Quantity(int _quantity);
+    public double Price();
+    public void Price(double _price);
 }

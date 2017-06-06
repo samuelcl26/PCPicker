@@ -19,7 +19,8 @@ public class Parts {
         Keyboard,
         Monitor,
         Chassis,
-        Mouse
+        Mouse,
+        Processor
     }
     
     //
